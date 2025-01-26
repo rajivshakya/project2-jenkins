@@ -6,10 +6,10 @@ RUN yum install -y httpd \
   zip \
  unzip
 RUN yum install -y unzip
-ADD klinik.zip  /var/www/html
+ADD kindle.zip  /var/www/html
 WORKDIR /var/www/html
-RUN unzip klinik.zip
-RUN cp -rvf clinic-website-template/* .
-RUN rm -rf clinic-website-template klinik.zip
+RUN unzip kindle.zip
+RUN cp -rvf markups-kindle/* .
+RUN rm -rf __MACOSX markups-kindle kindle.zip
 CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
 EXPOSE 80
